@@ -2,6 +2,7 @@ extends Node2D
 
 const SPEED = 60
 var direction = 1
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
