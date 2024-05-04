@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ci37glr6vaegw"]
+[gd_scene load_steps=11 format=3 uid="uid://ci37glr6vaegw"]
 
 [ext_resource type="PackedScene" uid="uid://by3wrfpb47cw5" path="res://scenes/player.tscn" id="1_uor6k"]
 [ext_resource type="Texture2D" uid="uid://co7uktihcjfyg" path="res://assets/sprites/world_tileset.png" id="2_ws328"]
 [ext_resource type="PackedScene" uid="uid://deyty8oym34qu" path="res://scenes/platform.tscn" id="3_kfk1c"]
+[ext_resource type="PackedScene" uid="uid://cvoocm6bkw22j" path="res://scenes/coin.tscn" id="4_y5fnk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2e2vn"]
 texture = ExtResource("2_ws328")
@@ -460,9 +461,10 @@ layer_0/tile_data = PackedInt32Array(262148, 0, 0, 262149, 0, 0, 393219, 0, 0, 3
 [node name="Player" parent="." instance=ExtResource("1_uor6k")]
 position = Vector2(80, 67)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(80, 67)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -3)
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
@@ -480,3 +482,24 @@ position = Vector2(276, 11)
 libraries = {
 "": SubResource("AnimationLibrary_gpgmw")
 }
+
+[node name="Coin" parent="." instance=ExtResource("4_y5fnk")]
+position = Vector2(136, 104)
+
+[node name="Coin2" parent="." instance=ExtResource("4_y5fnk")]
+position = Vector2(152, 104)
+
+[node name="Coin3" parent="." instance=ExtResource("4_y5fnk")]
+position = Vector2(168, 104)
+
+[node name="Coin4" parent="." instance=ExtResource("4_y5fnk")]
+position = Vector2(208, 88)
+
+[node name="Coin5" parent="." instance=ExtResource("4_y5fnk")]
+position = Vector2(224, 88)
+
+[node name="Coin6" parent="." instance=ExtResource("4_y5fnk")]
+position = Vector2(288, 88)
+
+[node name="Coin7" parent="." instance=ExtResource("4_y5fnk")]
+position = Vector2(304, 88)
