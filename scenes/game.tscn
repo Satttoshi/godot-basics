@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://ci37glr6vaegw"]
+[gd_scene load_steps=15 format=3 uid="uid://ci37glr6vaegw"]
 
 [ext_resource type="PackedScene" uid="uid://by3wrfpb47cw5" path="res://scenes/player.tscn" id="1_uor6k"]
+[ext_resource type="Script" path="res://scripts/game-manager.gd" id="2_j8eyf"]
 [ext_resource type="Texture2D" uid="uid://co7uktihcjfyg" path="res://assets/sprites/world_tileset.png" id="2_ws328"]
 [ext_resource type="PackedScene" uid="uid://deyty8oym34qu" path="res://scenes/platform.tscn" id="3_kfk1c"]
 [ext_resource type="PackedScene" uid="uid://cvoocm6bkw22j" path="res://scenes/coin.tscn" id="4_y5fnk"]
 [ext_resource type="PackedScene" uid="uid://ccjljkuec62qf" path="res://scenes/killzone.tscn" id="5_btrr3"]
 [ext_resource type="PackedScene" uid="uid://bob4m42cf40ss" path="res://scenes/slime.tscn" id="6_pb8qu"]
+[ext_resource type="FontFile" uid="uid://cu5asldhtcp1t" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_anvs7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2e2vn"]
 texture = ExtResource("2_ws328")
@@ -463,6 +465,22 @@ layer_0/tile_data = PackedInt32Array(458750, 0, 14, 524286, 0, 15, 458751, 0, 14
 layer_1/name = " Mid"
 layer_1/tile_data = PackedInt32Array(262148, 0, 0, 262149, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 327684, 0, 1, 327685, 0, 1, 393221, 0, 1, 393220, 0, 1, 458756, 0, 1, 458755, 0, 1, 458754, 0, 1, 458753, 0, 1, 458752, 0, 1, 458757, 0, 1, 393224, 393216, 0, 393225, 393216, 0, 327692, 393216, 0, 327693, 393216, 0, 458760, 393216, 1, 458761, 393216, 1, 393228, 393216, 1, 458764, 393216, 1, 393229, 393216, 1, 458765, 393216, 1, 458759, 393216, 0, 458762, 393216, 0, 458763, 393216, 0, 458758, 0, 1, 393222, 0, 1, 327686, 0, 0, 327697, 393216, 0, 393233, 393216, 1, 458769, 393216, 1, 327694, 589824, 1, 327695, 655360, 1, 327696, 720896, 1, 327698, 393216, 0, 327699, 393216, 0, 393235, 393216, 1, 393234, 393216, 1, 458770, 393216, 1, 458771, 393216, 1, 65544, 0, 0, 65545, 0, 0, 10, 0, 0, -65525, 0, 0, 131080, 0, 1, 131081, 0, 1, 65546, 0, 1, 11, 0, 1, 131082, 0, 1, 65547, 0, 1, -65522, 0, 0, -65521, 0, 0, 14, 0, 1, 15, 0, 1, 65550, 0, 1, 65551, 0, 1, -131058, 0, 5, -196594, 0, 4, -262130, 0, 4, -327666, 0, 3, -65512, 262144, 0, -65511, 262144, 0, -65510, 262144, 0, -65509, 262144, 0, -65508, 262144, 0, 65565, 262144, 0, 65566, 262144, 0, 196639, 262144, 1, 196638, 262144, 1, 131102, 262144, 1, 131101, 262144, 1, 196637, 262144, 1, 196636, 262144, 1, 131100, 262144, 1, 65564, 262144, 1, 28, 262144, 1, 27, 262144, 1, 26, 262144, 1, 25, 262144, 1, 24, 262144, 1, 65561, 262144, 1, 65562, 262144, 1, 65563, 262144, 1, 131099, 262144, 1, 196640, 262144, 1, 196641, 262144, 1, 196642, 262144, 1, 196643, 262144, 1, 196644, 262144, 1, 196645, 262144, 1, 262181, 262144, 1, 262180, 262144, 1, 262179, 262144, 1, 262178, 262144, 1, 262177, 262144, 1, 262176, 262144, 1, 262175, 262144, 1, 262174, 262144, 1, 262173, 262144, 1, 262172, 262144, 1, 131104, 196608, 8, 131107, 196608, 8, 65568, 196608, 7, 32, 196608, 7, -65504, 196608, 7, 65571, 196608, 7, -196576, 131072, 4, -65501, 131072, 4, 131110, 0, 0, 65575, 0, 0, 40, 0, 0, -65495, 0, 0, 41, 0, 1, 65577, 0, 1, 65576, 0, 1, 131112, 0, 1, 131111, 0, 1, 196647, 0, 1, 196646, 0, 1, 262182, 0, 1, 262183, 0, 1, 262184, 0, 1, 196648, 0, 1, 196649, 0, 1, 131113, 0, 1, 262185, 0, 1, -196564, 0, 0, -196563, 0, 0, -327640, 0, 0, -327639, 0, 0, -458716, 0, 0, -458715, 0, 0, -524256, 0, 0, -524255, 0, 0, 524287, 0, 1, 524286, 0, 0, 524285, 0, 0, 458751, 0, 0, 524284, 0, 0, 524283, 0, 0, 524282, 0, 0, 524281, 0, 0, 327672, 0, 0, 327671, 0, 0, 393208, 0, 1, 458744, 0, 1, 393207, 0, 1, 458743, 0, 1, 524279, 0, 1, 524280, 0, 1)
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_j8eyf")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 315.0
+offset_top = -75.0
+offset_right = 505.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(0, 0.707031, 0.723867, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_anvs7")
+text = "You collected
+X coins"
+horizontal_alignment = 1
+
 [node name="Player" parent="." instance=ExtResource("1_uor6k")]
 position = Vector2(80, 67)
 
@@ -524,8 +542,20 @@ position = Vector2(56, -19)
 [node name="Coin10" parent="collectibles" instance=ExtResource("4_y5fnk")]
 position = Vector2(160, -131)
 
-[node name="slime" parent="." instance=ExtResource("6_pb8qu")]
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 126.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0.707031, 0.723867, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_anvs7")
+text = "Omegalul"
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="slime" parent="Enemies" instance=ExtResource("6_pb8qu")]
 position = Vector2(550, 58)
 
-[node name="slime2" parent="." instance=ExtResource("6_pb8qu")]
+[node name="slime2" parent="Enemies" instance=ExtResource("6_pb8qu")]
 position = Vector2(27, 106)
