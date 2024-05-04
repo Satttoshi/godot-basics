@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci37glr6vaegw"]
+[gd_scene load_steps=10 format=3 uid="uid://ci37glr6vaegw"]
 
 [ext_resource type="PackedScene" uid="uid://by3wrfpb47cw5" path="res://scenes/player.tscn" id="1_uor6k"]
 [ext_resource type="Texture2D" uid="uid://co7uktihcjfyg" path="res://assets/sprites/world_tileset.png" id="2_ws328"]
@@ -411,6 +411,44 @@ sources/0 = SubResource("TileSetAtlasSource_2e2vn")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gdspy"]
 distance = -67.0
 
+[sub_resource type="Animation" id="Animation_d7r1d"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(276, 11), Vector2(294.5, 11), Vector2(331.5, 11), Vector2(350, 11)]
+}
+
+[sub_resource type="Animation" id="Animation_wrdls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(276, 11)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gpgmw"]
+_data = {
+"RESET": SubResource("Animation_wrdls"),
+"move": SubResource("Animation_d7r1d")
+}
+
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -434,3 +472,11 @@ shape = SubResource("WorldBoundaryShape2D_gdspy")
 
 [node name="Platform" parent="." instance=ExtResource("3_kfk1c")]
 position = Vector2(62, 43)
+
+[node name="Platform2" parent="." instance=ExtResource("3_kfk1c")]
+position = Vector2(276, 11)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2"]
+libraries = {
+"": SubResource("AnimationLibrary_gpgmw")
+}
